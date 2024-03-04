@@ -13,6 +13,8 @@
         <Button Content="Save" HorizontalAlignment="Left" Margin="95,10,0,0" VerticalAlignment="Top" Name="Save" Click="Save_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="Iteration: " VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="IterationNumber"/>
+        <TextBlock HorizontalAlignment="Left" Margin="11,89,0,0" TextWrapping="Wrap" Text="Time elapsed since start: " VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="148,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="92" Name="TotalTimeElapsed"/>
 
     </Grid>
 </Window>

@@ -23,6 +23,7 @@ namespace SubtitleTimers
     public partial class MainWindow : Window
     {
         TimeSpan elapsed;
+        TimeSpan elapsed2;
         String elapsedString;
         DateTime endTime;
         Timer timer;
@@ -39,11 +40,19 @@ namespace SubtitleTimers
 
         private void TimerElapsed(object sender, ElapsedEventArgs e)
         {
-            this.Dispatcher.Invoke(() =>
+            try
             {
-                IterationNumber.Text = iteration.ToString();
-                CurrentTime.Text = elapsedString;
-            });
+                this.Dispatcher.Invoke(() =>
+                {
+                    IterationNumber.Text = iteration.ToString();
+                    CurrentTime.Text = elapsedString;
+                    elapsed2 = DateTime.Now - startingTime;
+                    TotalTimeElapsed.Text = elapsed2.ToString();
+                });
+            } catch(TaskCanceledException ex)
+            {
+                // Catching this since on a millisecond timer interval it will likely be in the middle of running when program is closed.
+            }
         }
 
         private void TimeClick(object sender, RoutedEventArgs e)
@@ -67,7 +76,7 @@ namespace SubtitleTimers
 
         private void StartClick(object sender, RoutedEventArgs e)
         {
-            timer = new Timer(1000);
+            timer = new Timer(1);
             timer.Elapsed += TimerElapsed;
             timer.Start();
             startingTime = DateTime.Now;
