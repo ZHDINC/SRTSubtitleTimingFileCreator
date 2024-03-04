@@ -1,0 +1,18 @@
+﻿<Window x:Class="SubtitleTimers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SubtitleTimers"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="250">
+    <Grid>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="StartClick"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199" Name="CurrentTime"/>
+        <Button Content="Time" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.052,-0.317" Click="TimeClick"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="95,10,0,0" VerticalAlignment="Top" Name="Save" Click="Save_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="Iteration: " VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="IterationNumber"/>
+
+    </Grid>
+</Window>
